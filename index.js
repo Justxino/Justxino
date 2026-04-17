@@ -9,7 +9,7 @@ const client = new Client({
 });
 
 client.once('ready', () => {
-  console.log(`${client.user.tag} is online`);
+  console.log(`Logged in as ${client.user.tag}`);
 });
 
 client.on('interactionCreate', async interaction => {
