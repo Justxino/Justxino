@@ -10,7 +10,7 @@ const commands = [
     .setDescription('Show commands')
 ].map(c => c.toJSON());
 
-const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
+const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN);
 
 (async () => {
   try {
@@ -18,8 +18,8 @@ const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
 
     await rest.put(
       Routes.applicationGuildCommands(
-        process.env.CLIENT_ID,
-        process.env.SERVER_ID
+        process.env.DISCORD_CLIENT_ID,
+        process.env.DISCORD_GUILD_ID
       ),
       { body: commands }
     );
